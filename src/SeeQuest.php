@@ -112,7 +112,7 @@ class SeeQuest
      * @param $rule
      * @return array
      */
-    private function extractRuleNameAndOptionAsArray($rule)
+    private static function extractRuleNameAndOptionAsArray($rule)
     {
         $exploded = explode(':', $rule);
 
@@ -137,7 +137,7 @@ class SeeQuest
      * @param $option
      * @return bool|null|string
      */
-    private function validate($request, $attribute, $rule, $option)
+    private static function validate($request, $attribute, $rule, $option)
     {
         $error = [];
 
