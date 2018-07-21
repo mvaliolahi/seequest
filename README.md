@@ -1,6 +1,13 @@
 ## PHP Request Validator
 
-Validate request in easiest way!
+[![Latest Stable Version](https://poser.pugx.org/mvaliolahi/seequest/v/stable)](https://packagist.org/packages/mvaliolahi/scheduler)
+[![Total Downloads](https://poser.pugx.org/mvaliolahi/seequest/downloads)](https://packagist.org/packages/mvaliolahi/seequest)
+[![Build Status](https://travis-ci.org/mvaliolahi/seequest.svg?branch=master)](https://travis-ci.org/mvaliolahi/seequest)
+[![StyleCI](https://github.styleci.io/repos/108822055/shield?style=flat)](https://github.styleci.io/repos/108822055)
+[![PHP-Eye](https://php-eye.com/badge/mvaliolahi/seequest/tested.svg?style=flat)](https://php-eye.com/package/mvaliolahi/seequest)
+
+
+Validate requests in easiest way!
 
 #### Install
 
@@ -11,7 +18,7 @@ Validate request in easiest way!
 ```php   
 $validator = new SeeQuest('en');
 
-bool | $result = $validation->check($request, [
+$result = $validation->check($request, [
     'name' => 'required',
     'email' => 'required|email'
     'age'=> 'required|between:1,25',
@@ -24,18 +31,22 @@ $err = $validator->getErrors();
     
 ##### Create custom validator
 
-Create a class and extends from `Mvaliolahi\SeeQuest\Contracts\Validator`, it done! just implement validate() method.
+Create a class and extends from `Mvaliolahi\SeeQuest\Contracts\Validator`, it done!
+
+just implement validate() method.
 
 you have access to :
-    
+
+```php    
 Request => $this->request
 Attribute => $this->attribute
 Value => $this->value
 Rule => $this->rule
 Rule-Option => $this->option
- 
+``` 
         
-######example:
+###### example:
+
 ```php
 <?php
 
